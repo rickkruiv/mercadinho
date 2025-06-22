@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Teste Fetch</title>
+</head>
+<body>
+  <h1>Teste de conexão com a API</h1>
+  <pre id="output">Carregando...</pre>
+
+  <script>
+    fetch('https://fakestoreapi.com/products')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('output').innerText = JSON.stringify(data, null, 2);
+      })
+      .catch(err => {
+        document.getElementById('output').innerText = 'Erro: ' + err;
+      });
+  </script>
+</body>
+</html>
